@@ -1,0 +1,15 @@
+<div class="container">
+    <h2>Dashboard</h2>
+    <div *ngIf="projects.length">
+      <h3>Projects Overview</h3>
+      <ul>
+        <li *ngFor="let project of projects">
+          <a [routerLink]="['/project', project.id]">{{ project.name }}</a>
+          <span class="status">{{ project.status }}</span>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="!projects.length">
+      <p>No projects available.</p>
+    </div>
+  </div>
